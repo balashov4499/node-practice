@@ -1,3 +1,7 @@
-# Project exclude paths
-/node_modules/
-.idea
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+node-practice.iml

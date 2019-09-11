@@ -11,11 +11,9 @@ import * as express from 'express';
 const models: TsoaRoute.Models = {
     "User": {
         "properties": {
-            "id": { "dataType": "double" },
+            "id": { "dataType": "double", "required": true },
             "email": { "dataType": "string", "required": true },
             "password": { "dataType": "string", "required": true },
-            "lastName": { "dataType": "string", "required": true },
-            "firstName": { "dataType": "string", "required": true },
         },
         "additionalProperties": true,
     },

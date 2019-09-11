@@ -8,27 +8,19 @@
 			"properties": {
 				"id": {
 					"type": "number",
-					"format": "double",
-					"x-nullable": true
+					"format": "double"
 				},
 				"email": {
 					"type": "string"
 				},
 				"password": {
 					"type": "string"
-				},
-				"lastName": {
-					"type": "string"
-				},
-				"firstName": {
-					"type": "string"
 				}
 			},
 			"required": [
+				"id",
 				"email",
-				"password",
-				"lastName",
-				"firstName"
+				"password"
 			],
 			"type": "object",
 			"additionalProperties": true

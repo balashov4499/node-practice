@@ -1,6 +1,9 @@
 import {app} from './app';
 import * as http from 'http';
 import 'reflect-metadata';
+import {createConnection} from 'typeorm';
+
+createConnection().catch(err => console.log(err));
 
 const PORT = 3000;
 
