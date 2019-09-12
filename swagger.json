@@ -8,7 +8,8 @@
 			"properties": {
 				"id": {
 					"type": "number",
-					"format": "double"
+					"format": "double",
+					"x-nullable": true
 				},
 				"email": {
 					"type": "string"
@@ -18,7 +19,6 @@
 				}
 			},
 			"required": [
-				"id",
 				"email",
 				"password"
 			],
@@ -53,6 +53,28 @@
 				},
 				"security": [],
 				"parameters": []
+			},
+			"post": {
+				"operationId": "Create",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "newUser",
+						"required": true,
+						"schema": {
+							"type": "object"
+						}
+					}
+				]
 			}
 		}
 	},

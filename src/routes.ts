@@ -11,7 +11,7 @@ import * as express from 'express';
 const models: TsoaRoute.Models = {
     "User": {
         "properties": {
-            "id": { "dataType": "double", "required": true },
+            "id": { "dataType": "double" },
             "email": { "dataType": "string", "required": true },
             "password": { "dataType": "string", "required": true },
         },
@@ -46,6 +46,28 @@ export function RegisterRoutes(app: express.Express) {
 
 
             const promise = controller.getAll.apply(controller, validatedArgs as any);
+            promiseHandler(controller, promise, response, next);
+        });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.post('/users',
+        function(request: any, response: any, next: any) {
+            const args = {
+                newUser: { "in": "body", "name": "newUser", "required": true, "dataType": "any" },
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request);
+            } catch (err) {
+                return next(err);
+            }
+
+            const controller = new UsersController();
+
+
+            const promise = controller.create.apply(controller, validatedArgs as any);
             promiseHandler(controller, promise, response, next);
         });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa

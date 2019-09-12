@@ -4,12 +4,17 @@ import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
 export class User {
 
     @PrimaryGeneratedColumn()
-    id: number;
+    id?: number;
 
     @Column("varchar", {length: 255})
     email: string;
 
     @Column("text")
     password: string;
+
+    constructor(email, password){
+        this.email = email;
+        this.password = password;
+    }
 
 }
